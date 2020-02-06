@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EF8C488A-1336-4B5B-B274-EF6B848DD429}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>FPCSharp</RootNamespace>
+    <AssemblyName>FPCSharp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LanguageExt.Core, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\LanguageExt.Core.3.1.15\lib\net45\LanguageExt.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Ramda.NET, Version=0.23.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Ramda.NET.1.0.1\lib\net45\Ramda.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Reactive, Version=4.1.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>packages\System.Reactive.4.1.3\lib\net46\System.Reactive.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="3_AlgebraicDataTypes\Algebras.cs" />
+    <Compile Include="2_Monoids\Monoids.cs" />
+    <Compile Include="4_Functors\Id.cs" />
+    <Compile Include="4_Functors\Tree.Binary.cs" />
+    <Compile Include="5_Catamorhism\List.BaseFunctor.cs" />
+    <Compile Include="5_Catamorhism\Corecursion.Tuple.cs" />
+    <Compile Include="3_AlgebraicDataTypes\ListBase.MatchWith.cs" />
+    <Compile Include="2_Monoids\Monoids.MapReduce.cs" />
+    <Compile Include="2_Monoids\Monoids.Dictionary.cs" />
+    <Compile Include="6_Traversables\List.Fold.Compose.cs" />
+    <Compile Include="6_Traversables\Tree.Fold.Compose.cs" />
+    <Compile Include="6_Traversables\Tree.FoldMap.cs" />
+    <Compile Include="5_Catamorhism\Hylomorhism.cs" />
+    <Compile Include="4_Functors\Either.Functor.cs" />
+    <Compile Include="5_Catamorhism\Corecursion.cs" />
+    <Compile Include="4_Functors\Id.Compose.cs" />
+    <Compile Include="4_Functors\Id.Applicative.cs" />
+    <Compile Include="6_Traversables\Interpreter.cs" />
+    <Compile Include="5_Catamorhism\Mergesort.cs" />
+    <Compile Include="6_Traversables\Task.Example.cs" />
+    <Compile Include="6_Traversables\Task.cs" />
+    <Compile Include="6_Traversables\Distribute.Compose.cs" />
+    <Compile Include="6_Traversables\Tree.Fold.cs" />
+    <Compile Include="6_Traversables\Compose.cs" />
+    <Compile Include="6_Traversables\Tree.cs" />
+    <Compile Include="6_Traversables\List.cs" />
+    <Compile Include="6_Traversables\List.Fold.cs" />
+    <Compile Include="5_Catamorhism\ListBase.Cata.cs" />
+    <Compile Include="5_Catamorhism\ListBase.Ana.cs" />
+    <Compile Include="5_Catamorhism\ListBase.cs" />
+    <Compile Include="4_Functors\NullObject.cs" />
+    <Compile Include="4_Functors\Maybe.Example.cs" />
+    <Compile Include="4_Functors\Maybe.cs" />
+    <Compile Include="5_Catamorhism\Numeral.cs" />
+    <Compile Include="5_Catamorhism\Interpreter.cs" />
+    <Compile Include="6_Traversables\Reader.Interpreter.cs" />
+    <Compile Include="4_Functors\Reader.Applicative.cs" />
+    <Compile Include="5_Catamorhism\Tree.Visitor.cs" />
+    <Compile Include="6_Traversables\Tree.Cata.cs" />
+    <Compile Include="4_Functors\Tree.cs" />
+    <Compile Include="4_Functors\Reader.cs" />
+    <Compile Include="4_Functors\IO.cs" />
+    <Compile Include="4_Functors\Task.cs" />
+    <Compile Include="4_Functors\Id.Cata.cs" />
+    <Compile Include="4_Functors\Id.Fold.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="3_AlgebraicDataTypes\ListBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
