@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace ListBase.MatchWith
+namespace ListBase.Switch
 {
     public static partial class funcEtxnesion
     {

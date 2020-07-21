@@ -14,7 +14,7 @@ namespace Catamorphisms.Corecursion.CoFree
 
     public class Demo
     {
-        public static void Main()
+        public static void Run()
         {
             Func<int, LazyTuple<int>> StreamAnaLazy = null;
             StreamAnaLazy = n => Stream(n, () => StreamAnaLazy(n + 1));
