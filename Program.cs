@@ -11,9 +11,9 @@ namespace Monads
 {
     class Program
     {
-        static async System.Threading.Tasks.Task Main(string[] args)
+        public static void Main(string[] args)
         {
-            await Traversables.Task.Example.Demo.Run();
+            Functors.Tree.Switch.Demo.Run();
             Console.ReadKey();
         }
     }

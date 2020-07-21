@@ -17,7 +17,7 @@ namespace Catamorphisms.List
                 (@this.Count == 0) ?
                 algebra.Empty() :
                 algebra.Cons(@this[0], @this.GetRange(1, @this.Count - 1));
-        public static List<T> AddRangeFluent<T>(this List<T> @this, List<T> range)
+        public static List<T> Concat<T>(this List<T> @this, List<T> range)
         {
             @this.AddRange(range);
             return @this;
@@ -32,7 +32,7 @@ namespace Catamorphisms.List
         public static List<T1> Map2<T, T1>(this List<T> @this, Func<T, T1> f) => @this.MatchWith(
            algebra: (
                Empty: () => new List<T1> { },
-               Cons: (v, r) => new List<T1> { f(v) }.AddRangeFluent(r.Map2(f))
+               Cons: (v, r) => new List<T1> { f(v) }.Concat(r.Map2(f))
          ));
 
         public static List<T> Zip<T>(this List<T> @this, List<T> @a2) =>
@@ -42,7 +42,7 @@ namespace Catamorphisms.List
                     @this.MatchWith(algebra: (
                         Empty: () => xs,
                         Cons: (y, ys) =>
-                        new List<T> { x, y }.AddRangeFluent(xs.Zip(ys))
+                        new List<T> { x, y }.Concat(xs.Zip(ys))
                     ))));
          
 
