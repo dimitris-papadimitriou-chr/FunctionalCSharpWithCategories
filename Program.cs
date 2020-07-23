@@ -13,7 +13,7 @@ namespace Monads
     {
         public static void Main(string[] args)
         {
-            Functors.Tree.Switch.Demo.Run();
+            Functors.Tree.Binary.Switch.Demo.Run();
             Console.ReadKey();
         }
     }

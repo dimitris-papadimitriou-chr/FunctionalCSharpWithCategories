@@ -6,7 +6,7 @@ using System.Linq;
 namespace Catamorphisms.Mergesort.Hylo
 {
 
-    public static partial class funcEtxnesion
+    public static partial class FunctionalExt
     {
         public static string Show<T>(this Tree<T> @this) =>
         @this.MatchWith<string>(algebra: (

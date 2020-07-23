@@ -2,8 +2,16 @@
 
 namespace Functors.Tree.Binary.Switch
 {
-    public static partial class funcEtxnesion
+    public static partial class FunctionalExt
     {
+        public static string Show<T>(this Tree<T> @this) =>
+                  @this switch
+                  {
+                      Leaf<T> { Value: var v } => $"{v}",
+                      Node<T> { Left: var l, Right: var r } => $"({l.Show()},{r.Show()})",
+                      _ => throw new NotImplementedException()
+                  };
+      
         public static T1 Cata<T, T1>(this Tree<T> @this,
             (Func<T, T1> Leaf, Func<T1, T1, T1> Node) algebra) =>
                 @this switch
@@ -13,11 +21,11 @@ namespace Functors.Tree.Binary.Switch
                     _ => throw new NotImplementedException()
                 };
 
-        public static string Show<T>(this Tree<T> @this) =>
-                   @this.Cata<T, string>(algebra: (
-                       Leaf: v => $"{v}",
-                       Node: (l, r) => $"({l},{r})"
-                   ));
+        //public static string Show<T>(this Tree<T> @this) =>
+        //           @this.Cata<T, string>(algebra: (
+        //               Leaf: v => $"{v}",
+        //               Node: (l, r) => $"({l},{r})"
+        //           ));
 
         public static Tree<T1> Map<T, T1>(this Tree<T> @this, Func<T, T1> f) =>
             @this.Cata<T, Tree<T1>>(
@@ -68,6 +76,12 @@ namespace Functors.Tree.Binary.Switch
     {
         public static void Run()
         {
+            (Func<int, int> Leaf, Func<int, int, int> Node) sumAlgebra = (Leaf: v => v, Node: (l, r) => l + r);
+
+            var tree = new Node<int>(new Node<int>(new Leaf<int>(1), new Leaf<int>(3)), new Node<int>(new Leaf<int>(5), new Leaf<int>(7)));
+           
+            Console.WriteLine(tree.Show());
+            Console.WriteLine(tree.Cata(sumAlgebra));
         }
     }
 }

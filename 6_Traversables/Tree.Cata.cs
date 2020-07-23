@@ -3,7 +3,7 @@ using Functors.Tree;
 
 namespace  Traversables.Tree.Cata
 { 
-    public static partial class funcEtxnesion
+    public static partial class FunctionalExt
     { 
         public static T Cata<T>(this Tree<T> @this, (Func<T, T> Leaf, Func<T, T, T, T> Node) algebra) =>
                 @this.MatchWith(pattern: (

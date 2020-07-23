@@ -7,7 +7,7 @@ using Functors.Id;
 
 namespace Traversables.Distribute.Compose
 {
-    public static partial class funcEtxnesion
+    public static partial class FunctionalExt
     {
         public static List<T> AsList<T>(this T @this) => new List<T> { @this };
 

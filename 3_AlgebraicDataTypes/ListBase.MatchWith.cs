@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace ListBase.Switch
 {
-    public static partial class funcEtxnesion
+    public static partial class FunctionalExt
     {
         public static T Multiply<T>(this ListBase<T> @this, (Func<T, T, T> concat, T empty) monoid) =>
         @this.MatchWith(pattern: (

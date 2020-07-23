@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace Traversables.Task
 {
 
-    public static partial class funcEtxnesion
+    public static partial class FunctionalExt
     {
         public static List<T> AsList<T>(this T @this) => new List<T>() { @this };
          public static List<T> Concat<T>(this List<T> @this, List<T> range)

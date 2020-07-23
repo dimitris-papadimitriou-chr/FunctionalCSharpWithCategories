@@ -14,7 +14,7 @@ namespace Traversables.List
         Monoid<M> Concat(Monoid<M> m);
     }
 
-    public static partial class funcEtxnesion
+    public static partial class FunctionalExt
     {
         public static List<T> AsList<T>(this T @this) => new List<T>() { @this };
         public static List<T> ToList<T>(this ValueTuple<T, T> @this) => new List<T> { @this.Item1, @this.Item2 };

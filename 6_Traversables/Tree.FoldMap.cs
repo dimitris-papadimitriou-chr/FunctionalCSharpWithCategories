@@ -4,7 +4,7 @@ using Functors.Tree.Binary;
 
 namespace Traversables.Tree.FoldMap
 {
-    public static partial class funcEtxnesion
+    public static partial class FunctionalExt
     {
         public static T Fold<T>(this Tree<T> @this,
             (Func<T> empty, Func<T, T, T> concat) monoid) =>

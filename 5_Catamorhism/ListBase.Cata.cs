@@ -4,7 +4,7 @@ using System.Diagnostics;
  
 namespace Catamorphisms.List
 {
-    public static partial class funcEtxnesion
+    public static partial class FunctionalExt
     {
         public static string Show<T>(this List<T> @this) => 
             @this.MatchWith(

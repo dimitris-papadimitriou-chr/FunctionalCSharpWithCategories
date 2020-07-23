@@ -4,7 +4,7 @@ using System.Collections.Generic;
   
 namespace Traversables.List.Fold
 {
-    public static partial class funcEtxnesion
+    public static partial class FunctionalExt
     {
 
         public static T1 MatchWith<T, T1>(this List<T> @this, (Func<T1> Empty, Func<T, List<T>, T1> Cons) algebra) =>

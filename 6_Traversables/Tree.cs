@@ -4,7 +4,7 @@ using Functors.Id.Applicative;
 
 namespace Traversables.Tree
 {
-    public static partial class funcEtxnesion
+    public static partial class FunctionalExt
     {
         public static Id<Tree<T>> Distribute<T>(this Tree<Id<T>> @this) =>
             @this.MatchWith(pattern: (

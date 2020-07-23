@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace ListBase.MatchWith
 {
-    public static partial class funcEtxnesion
+    public static partial class FunctionalExt
     {
         public static ListBase<T1> Map<T, T1>(this ListBase<T> @this, Func<T, T1> f) =>
              @this switch
