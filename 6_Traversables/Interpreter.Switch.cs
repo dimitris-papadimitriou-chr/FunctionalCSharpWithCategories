@@ -4,9 +4,7 @@ namespace Traversables.Interpreter.Switch
 {
     public static class FunctionalExtensions
     {
-        public static Reader<Env, T1> App<Env, T, T1>(this Reader<Env, Func<T, T1>> @this, Reader<Env, T> fa)
-            => new Reader<Env, T1>(env => { return @this.Map(f => fa.Map(f).Run(env)).Run(env); });
-
+   
         public static T1 Cata<T, T1>(this Expr<T> @this,
             (Func<T1, T1, T1> add, Func<T1, T1, T1> sub, Func<T, T1> val) algebra) =>
             @this switch
@@ -42,18 +40,7 @@ namespace Traversables.Interpreter.Switch
         public Expr<T> X { get; }
         public Expr<T> Y { get; } 
     }
-    public class Reader<Env, T>
-    {
-        public Func<Env, T> Fn { get; set; }
-        public Reader(Func<Env, T> fn) => Fn = fn;
-        public Reader<Env, T1> Map<T1>(Func<T, T1> f) => new Reader<Env, T1>((env) => f(Fn(env)));
-        public T Run(Env env) => Fn(env);
-    }
-    public class Config
-    {
-        public string Name { get; set; }
-    }
-
+  
     public class Demo
     {
         public static void Run()
